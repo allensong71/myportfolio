@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.css" rel="stylesheet">
+  <link href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <script src="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.js"></script>
+
+  <script src="script.js"></script>
+  <script type="text/javascript">
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function KW_getVal(o){ //v1.2
+	var retVal="0";if (o.type=="select-one")
+	{retVal=(o.selectedIndex==-1)?0:o.options[o.selectedIndex].value;}
+	else if (o.length>1){for (var i=0;i<o.length;i++) if (o[i].checked) retVal=o[i].value;
+	} else if (o.type=="checkbox") {retVal=(o.checked)?o.value:0;} else {
+	retVal=Number(o.value)}return parseFloat(retVal);
+}
+
+function KW_calcForm() { //v1.2
+	var str="",a=KW_calcForm.arguments; for (var i=3;i<a.length;i++)
+	str+=(a[i].indexOf("#")==-1)?a[i]:KW_getVal(MM_findObj(a[i].substring(1)));
+	t=Math.round(a[1]*eval(str))/a[1];tS=t.toString();if(a[2]>0){tSp=tS.indexOf(".");
+	if(tSp==-1)	tS+=".";tSp=tS.indexOf(".");while(tSp!=(tS.length-1-a[2])){tS+="0";
+	tSp=tS.indexOf(".");}} MM_findObj(a[0]).value=tS;
+}
+  </script>
+</head>
+<div data-role="page" data-control-title="Home" id="page2">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            進忠 Allen的自介 手機網頁版
+        </h1>
+    </div>
+    <div role="main" class="ui-content">
+        <a data-inline="true" data-direction="reverse" href="#page1" data-icon="arrow-r"
+        data-iconpos="right" class="ui-btn ui-btn-a ui-icon-arrow-r ui-btn-icon-right">
+		<img src="https://allensong71.github.io/myportfolio/s.png" alt="rss" style="display: block; margin: 0 auto">
+            履歷 Profile
+        </a>
+        <a data-inline="true" data-direction="reverse" href="#page3" data-icon="arrow-r"
+        data-iconpos="right" class="ui-btn ui-btn-a ui-icon-arrow-r ui-btn-icon-right">
+		<img src="https://allensong71.github.io/myportfolio/b.png" alt="rss" style="display: block; margin: 0 auto">
+            專案簡報 Portfolio
+        </a>
+        <a data-inline="true" data-direction="reverse" href="#page12" data-icon="arrow-r"
+        data-iconpos="right" class="ui-btn ui-btn-a ui-icon-arrow-r ui-btn-icon-right">
+		<img src="https://allensong71.github.io/myportfolio/c.png" alt="rss" style="display: block; margin: 0 auto">
+            社群&剪影 Social & Pic
+        </a>
+        <a data-inline="true" data-direction="reverse" href="#page13" data-icon="arrow-r"
+        data-iconpos="right" class="ui-btn ui-btn-a ui-icon-arrow-r ui-btn-icon-right">
+		<img src="https://allensong71.github.io/myportfolio/d.png" alt="rss" style="display: block; margin: 0 auto">
+            聯絡我 Contact Me
+        </a>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+    </div>
+</div>
+<div data-role="page" data-control-title="profile" id="page1">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            履歷
+        </h1>
+        <a href="#page2" data-icon="info" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-info ui-btn-icon-left">
+            Home
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style=" text-align:center" data-controltype="image">
+            <img style="width: 200px; height: 200%" src="https://allensong71.github.io/myportfolio/01.jpg">
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    個人簡介 Personal Profile
+                </h3>
+                <div data-controltype="textblock">
+                    <div class="tablerow">
+                        <div class="left-table" style="text-align: left;" data-mce-style="text-align: left;">
+                            <strong>
+                                姓名
+                            </strong>
+                            :宋進忠
+                        </div>
+                    </div>
+                    <p style="text-align: left;" data-mce-style="text-align: left;">
+                        <strong>
+                            出生年月日
+                        </strong>
+                        :1984.05.28
+                    </p>
+                    <p style="text-align: left;" data-mce-style="text-align: left;">
+                        <strong>
+                            性別
+                        </strong>
+                        :男性
+                    </p>
+                    <p style="text-align: left;" data-mce-style="text-align: left;">
+                        <strong>
+                            出生地
+                        </strong>
+                        :台灣台中市
+                    </p>
+                    <p style="text-align: left;" data-mce-style="text-align: left;">
+                        <strong>
+                            座右銘
+                        </strong>
+                        :"樂於學習，善於學習"
+                    </p>
+                    <p style="text-align: left;">
+                        <strong>
+                            簡短描述
+                        </strong>
+                        :擁有自學的能力，做好當下的角色，Enjoy面對解決問題感覺，勇於挑戰突破自己的界限! 
+                    </p>
+                    <div class="tablerow">
+                        <div class="right-table">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    教育程度 Education Level
+                </h3>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            1999~2002 國立台中家商 商業經營科
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/02.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            2002~2006 朝陽科技大學 保險金融管理學學士
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/03.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            2018~2020 國立勤益科大 流通管理系碩士
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/16.jpg">
+                        </div>
+						<div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/15.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    工作經驗歷程 Employment History
+                </h3>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            2018/02-2020:統一超 General Staff
+                        </h3>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            2016/10-2017/08:澳洲Eastwood Night market Supervisor
+                        </h3>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            2008/09-2016/09:台灣順安GMP藥廠 財務經理
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    專長 & 技能證書 Skills &amp; License
+                </h3>
+				<div data-controltype="textblock">
+                    <div class="tablerow">
+                        <div class="left-table" style="text-align: left;" data-mce-style="text-align: left;">
+                            <h2><strong>
+                                個人專長分二部分:
+								</h2>
+                            <h1></strong>
+                            管理能力:財務靈活調度能力、擅於溝通對話、推廣行銷業務、執行決策及專案簡報分析、英文聽說應對。</h1>
+						<div class="left-table" style="text-align: left;" data-mce-style="text-align: left;">
+							<h1></strong>
+							數位能力:程式及網頁設計、資訊科技雲端運作、多媒體軟體應用、基礎電腦軟硬體操作。
+                        </h1>
+						</div>
+                    </div>
+                    
+                    <div class="tablerow">
+                        <div class="right-table">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            XS策略初級程式人員合格
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/14.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            信託業業務人員專業測驗合格
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/07.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            金融市場常識與職道德合格
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/08.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            投資型保險商品業務員合格
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/04.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            人身保險業務員資格測驗合格
+                        </h3>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            多益考試聽說測驗
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/17.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    推薦信 &amp; 其它文件 Letter of Recommendation
+                </h3>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Indeep Incorporated
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/10.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Chinatown Food &amp;Entertainment Incorporated
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/12.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Eastwood night Market Store Owner
+                        </h3>
+                        <div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/13.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            澳洲遊學學習報告&amp;證書&amp;老師評語
+                        </h3>
+						<div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/09.jpg">
+                        </div>
+						<div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/11.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            中國文化大學地政公職專技考照輔導課程及格
+                        </h3>
+						<div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/06.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            國立高雄應用科技大學中小企業財務分析碩士學分班及格
+                        </h3>
+						<div style="" data-controltype="image">
+                            <img style="width: 350px; height: 200%" src="https://allensong71.github.io/myportfolio/05.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    興趣嗜好 Interests &amp; Hobbies
+                </h3>
+                <div data-controltype="textblock">
+                    <p>
+                        <b>
+                            閱讀報章雜誌、收看影視電影、蒐集財金時事、運動健身，吸收新知識。
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#page2" data-icon="arrow-l" data-iconpos="top" class="ui-btn  ui-icon-arrow-l ui-btn-icon-top">
+                <img src="a.png" alt="rss" style="display: block; margin: 0 auto">
+					首頁 Home
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page3" data-icon="arrow-r" data-iconpos="top" class="ui-btn  ui-icon-arrow-r ui-btn-icon-top">
+				<img src="b.png" alt="rss" style="display: block; margin: 0 auto">
+                    專案簡報 Portfolio
+                </a>
+            </div>
+        </div>
+   
+	    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+		</div>
+    </div>
+</div>
+<div data-role="page" data-control-title="porfolio" id="page3">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            專案簡報
+        </h1>
+        <a href="#page2" data-icon="info" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-info ui-btn-icon-left">
+            Home
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page4" data-transition="slide">
+                    用Xs程式語言探討企業 基本面-評估選股品質
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page5" data-transition="slide">
+                    決策分析-48種K棒型態戰法
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page6" data-transition="slide">
+                    通路和物流管理
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page7" data-transition="slide">
+                    流通科技-Power BI視覺化圖表
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page8" data-transition="slide">
+                    流通科技-Google網路硬碟
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page9" data-transition="slide">
+                    電子商務(E-Commerce)-以PChome24H消費為例
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page10" data-transition="slide">
+                    電子商務(E-Commerce)-實作Codiqa網頁呈現
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-theme="a">
+                <a href="#page11" data-transition="slide">
+                    碩士論文口試發表
+                </a>
+            </li>
+        </ul>
+    </div>
+		<div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#page1" data-icon="arrow-l" data-iconpos="top" class="ui-btn  ui-icon-arrow-l ui-btn-icon-top">
+                <img src="s.png" alt="rss" style="display: block; margin: 0 auto">    
+					履歷 Profile
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page12" data-icon="arrow-r" data-iconpos="top" class="ui-btn  ui-icon-arrow-r ui-btn-icon-top">
+                <img src="c.png" alt="rss" style="display: block; margin: 0 auto">    
+					社群&剪影 Social & Pic
+                </a>
+            </div>
+        </div>
+   <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a1" id="page4">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            用Xs程式語言探討企業 基本面-評估選股品質
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 350px; height: 0%" src="https://allensong71.github.io/myportfolio/31.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/35.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/41.jpg">
+        </div>
+    </div>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a2" id="page5">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            決策分析-48種K棒型態戰法
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/18.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/20.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/36.jpg">
+        </div>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a3" id="page6">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            通路和物流管理
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/21.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/22.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/40.jpg">
+        </div>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a4" id="page7">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            流通科技-Power BI視覺化圖表
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/25.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/26.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/37.jpg">
+        </div>
+    </div>
+   <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a5" id="page8">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            流通科技-Google網路硬碟
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/23.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/24.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/38.jpg">
+        </div>
+    </div>
+   <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a6" id="page9">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            電子商務(E-Commerce)-以PChome24H消費為例
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/27.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/28.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/39.jpg">
+        </div>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a7" id="page10">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            電子商務(E-Commerce)-實作Codiqa網頁呈現
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/29.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/30.jpg">
+        </div>
+        <div>
+            <a href="https://ppt.cc/fI4pVx" data-transition="fade">
+                課程回顧以Codiqa呈現
+            </a>
+        </div>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="a8" id="page11">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            碩士論文口試發表
+        </h1>
+        <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-arrow-l ui-btn-icon-left">
+            Back
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 0%" src="https://allensong71.github.io/myportfolio/33.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/32.jpg">
+        </div>
+        <div style="" data-controltype="image">
+            <img style="width: 450px; height: 300px" src="https://allensong71.github.io/myportfolio/34.jpg">
+        </div>
+    </div>
+    </div>
+	
+
+    </div>
+			<div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+    
+    </div>
+</div>
+<div data-role="page" data-control-title="Social" id="page12">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            Social &amp; Pic
+        </h1>
+        <a href="#page2" data-icon="info" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-info ui-btn-icon-left">
+            Home
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <a href="https://reurl.cc/k0vQ1L" class="ui-btn ">
+				<img src="F.png" alt="rss" style="display: block; margin: 0 auto">
+                    Facebook
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="https://reurl.cc/LdDZmL" class="ui-btn ">
+				<img src="p.png" alt="rss" style="display: block; margin: 0 auto">
+                    Google相簿
+                </a>
+            </div>
+            <div class="ui-block-c">
+                <a href="https://reurl.cc/R1DQjx" class="ui-btn ">
+				<img src="n.png" alt="rss" style="display: block; margin: 0 auto">
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a href="#page3" data-icon="arrow-l" data-iconpos="left" class="ui-btn  ui-icon-arrow-l ui-btn-icon-left">
+				<img src="b.png" alt="rss" style="display: block; margin: 0 auto">
+                    專案簡報 Portfolio
+                </a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#page13" data-icon="arrow-r"data-iconpos="right" class="ui-btn ui-btn-a ui-icon-arrow-r ui-btn-icon-right">
+		        <img src="d.png" alt="rss" style="display: block; margin: 0 auto">
+                    聯絡我 Contact Me
+        </a>
+            </div>
+        </div>
+   <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
+<div data-role="page" data-control-title="Contact Me" id="page13">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            Contact ME
+        </h1>
+        <a href="#page2" data-icon="info" data-iconpos="left" class="ui-btn ui-btn-left ui-icon-info ui-btn-icon-left">
+            Home
+        </a>
+    </div>
+    <div role="main" class="ui-content">
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput2">
+                姓名 Name
+            </label>
+            <input name="" id="textinput2" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput3">
+                信箱 Email
+            </label>
+            <input name="" id="textinput3" placeholder="" value="" type="email">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput4">
+                留言 Massage
+            </label>
+            <input name="" id="textinput4" placeholder="" value="" type="text">
+        </div>
+        <a href="https://forms.gle/faUcdxxVR1rqqTwv5" data-icon="star" data-iconpos="left"
+        class="ui-btn  ui-icon-star ui-btn-icon-left">
+            送出 Send
+        </a>
+		<div class="ui-block-a">
+                <a href="#page12" data-icon="arrow-l" data-iconpos="left" class="ui-btn  ui-icon-arrow-l ui-btn-icon-left">
+				<img src="c.png" alt="rss" style="display: block; margin: 0 auto">
+                    社群&剪影 Social & Pic
+                </a>
+            </div>
+    </div>
+    <div data-theme="b" data-role="footer" data-position="fixed">
+        <h3 class="ui-title">
+            Mobile Portfolio
+			<p class="copyright">&copy; Copyright 2020 by Allen</p>
+        </h3>
+        
+        </div>
+</div>
